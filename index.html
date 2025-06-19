@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Interativo</title>
+  <title>Site Interativo Moderno</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,20 +12,21 @@
   </header>
 
   <main class="grid">
-    <section class="formulario">
-      <h2>Formulário de Contato</h2>
-      <form id="contatoForm">
-        <input type="text" id="nome" placeholder="Seu nome" required />
-        <input type="email" id="email" placeholder="Seu e-mail" required />
-        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+    <section class="formulario" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Formulário de Contato</h2>
+      <form id="contatoForm" novalidate>
+        <input type="text" id="nome" placeholder="Seu nome" required aria-required="true" aria-label="Nome" />
+        <input type="email" id="email" placeholder="Seu e-mail" required aria-required="true" aria-label="Email" />
+        <textarea id="mensagem" placeholder="Sua mensagem" required aria-required="true" aria-label="Mensagem"></textarea>
         <button type="submit">Enviar</button>
+        <p class="feedback" aria-live="polite"></p>
       </form>
     </section>
 
-    <section class="acao">
-      <h2>Interação</h2>
-      <button id="cliqueBtn">Clique em mim!</button>
-      <p id="mensagemBotao"></p>
+    <section class="acao" aria-labelledby="titulo-acao">
+      <h2 id="titulo-acao">Interação</h2>
+      <button id="cliqueBtn" aria-pressed="false">Clique em mim!</button>
+      <p id="mensagemBotao" aria-live="polite"></p>
     </section>
   </main>
 
