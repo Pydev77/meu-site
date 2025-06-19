@@ -1,64 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px;
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 40px 20px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
   gap: 40px;
   padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  flex-grow: 1;
 }
 
 .formulario, .acao {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario:hover, .acao:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #5a2a82;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  font-size: 1.8rem;
 }
 
 form input, form textarea {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
+  margin-bottom: 18px;
+  padding: 15px 18px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 50px;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #5a2a82;
+  box-shadow: 0 0 8px rgba(90, 42, 130, 0.6);
+}
+
+form textarea {
+  min-height: 100px;
 }
 
 form button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  width: 100%;
+  padding: 15px;
+  background: #5a2a82;
   color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background: #7e4ec2;
+}
+
+.feedback {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #5a2a82;
+  min-height: 24px;
 }
 
 #cliqueBtn {
-  padding: 15px;
-  background-color: #2196F3;
+  width: 100%;
+  padding: 18px;
+  font-size: 1.2rem;
+  background: #3498db;
   color: white;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+  font-weight: 600;
 }
 
 #cliqueBtn:hover {
-  background-color: #0b7dda;
+  background: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(41, 128, 185, 0.6);
 }
 
 #mensagemBotao {
-  margin-top: 15px;
-  font-size: 18px;
+  margin-top: 18px;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  min-height: 32px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 30px;
+  }
+  
+  header {
+    font-size: 1.6rem;
+    padding: 30px 15px;
+  }
 }
